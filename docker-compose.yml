@@ -1,4 +1,4 @@
-version: '3.9'
+version: '24.0.7, build afdd53b'
 
 services:
   web:
