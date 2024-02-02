@@ -21,7 +21,7 @@ class HomePageTest(TestCase):
 
     def test_home_page_contents(self):
         response = self.client.get(reverse('home'))
-        self.assertContains(response, "Home page")
+        self.assertContains(response, "welcome to my home page")
 
     def test_home_page_template(self):
         response = self.client.get(reverse('home'))
