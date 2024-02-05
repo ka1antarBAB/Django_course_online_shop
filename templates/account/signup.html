@@ -7,9 +7,11 @@
 {% endblock page_title %}
 {% block content %}
     <h2>welcome to my signup page </h2>
+    <hr>
     <form action="" method="POST">
         {% csrf_token %}
-        {{form|crispy}} 
-        <input type="submit" value="signup">
+        {{ form|crispy }}
+        <input type="submit" value="Signup">
     </form>
+    <hr>
 {% endblock content %}
