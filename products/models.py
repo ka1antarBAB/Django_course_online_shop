@@ -3,6 +3,7 @@ from django.shortcuts import reverse
 
 from django.contrib.auth import get_user_model
 
+
 class Product(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
@@ -17,7 +18,7 @@ class Product(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'pk': self.pk})
+        return reverse('detail', args={self.pk})
 
 
 class Comment(models.Model):
@@ -34,9 +35,13 @@ class Comment(models.Model):
 
     body = models.TextField()
     active = models.BooleanField(default=True)
-    point = models.CharField(choices=PRODUCT_START, max_length=10, default=PRODUCT_START[0][0], blank=True)
+    point = models.CharField(choices=PRODUCT_START, max_length=10, default=PRODUCT_START[0][0])
 
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse('detail', args={self.product.id})
+
 
 

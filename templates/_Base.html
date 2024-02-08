@@ -26,7 +26,13 @@
 </head>
 
 <body dir='rtl'>
-
+{% if user.is_authenticated %}
+    خوش آمدی {{ user.username }} |
+    <a class="link-light text-decoration-none" href="{% url 'account_logout' %}">خروج </a>
+{% else %}
+    <a class="link-light text-decoration-none" href="{% url 'account_login' %}">ورود </a> |
+    <a class="link-light text-decoration-none" href="{% url 'account_signup' %}">ثبت نام </a>
+{% endif %}
 <!-- Header Start -->
 <header class="header">
     <div class="header-inner fixed-header">
