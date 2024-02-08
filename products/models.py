@@ -4,6 +4,11 @@ from django.shortcuts import reverse
 from django.contrib.auth import get_user_model
 
 
+class ActiveProductManager(models.Manager):
+    def get_queryset(self):
+        return super(ActiveProductManager, self).get_queryset().filter(active=True)
+
+
 class Product(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
@@ -14,11 +19,19 @@ class Product(models.Model):
     price = models.PositiveIntegerField()
     price_daler = models.DecimalField(max_digits=4, decimal_places=2)
 
+    objects = models.Manager()
+    active_products_manager = ActiveProductManager()
+
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
         return reverse('detail', args={self.pk})
+
+
+class ActiveCommentManager(models.Manager):
+    def get_queryset(self):
+        return super(ActiveCommentManager, self).get_queryset().filter(active=True)
 
 
 class Comment(models.Model):
@@ -39,6 +52,9 @@ class Comment(models.Model):
 
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
+
+    active_comment_manager = ActiveCommentManager()
+    objects = models.Manager()
 
     def get_absolute_url(self):
         return reverse('detail', args={self.product.id})

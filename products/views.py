@@ -13,7 +13,9 @@ class ProductListView(generic.ListView):
     model = Product
     template_name = 'products/product_list.html'
     context_object_name = 'product'
-    queryset = Product.objects.filter(active=True)
+
+    def get_queryset(self):
+        return Product.active_products_manager.all()
 
 
 class ProductDetailView(generic.DetailView):
@@ -23,12 +25,14 @@ class ProductDetailView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        product = self.get_object()
+        active_comments = Comment.active_comment_manager.filter(product=product)
+        context['active_comments'] = active_comments
         context['comment_form'] = CommentForm()
         return context
 
 
 class CommentCreateView(generic.CreateView):
-    product_model_id = Product
     model = Comment
     form_class = CommentForm
 
