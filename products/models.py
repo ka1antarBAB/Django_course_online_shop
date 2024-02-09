@@ -29,9 +29,9 @@ class Product(models.Model):
         return reverse('detail', args={self.pk})
 
 
-class ActiveCommentManager(models.Manager):
-    def get_queryset(self):
-        return super(ActiveCommentManager, self).get_queryset().filter(active=True)
+# class ActiveCommentManager(models.Manager):
+#     def get_queryset(self):
+#         return super(ActiveCommentManager, self).get_queryset().filter(active=True)
 
 
 class Comment(models.Model):
@@ -43,8 +43,8 @@ class Comment(models.Model):
         ('5', 'very good'),
 
     ]
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments', )
-    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='comments', )
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='comments')
 
     body = models.TextField()
     active = models.BooleanField(default=True)
@@ -53,7 +53,7 @@ class Comment(models.Model):
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
 
-    active_comment_manager = ActiveCommentManager()
+    # active_comment_manager = ActiveCommentManager()
     objects = models.Manager()
 
     def get_absolute_url(self):
