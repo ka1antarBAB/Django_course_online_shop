@@ -46,9 +46,9 @@ class Comment(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='comments')
 
-    body = models.TextField()
+    body = models.TextField(verbose_name='text')
     active = models.BooleanField(default=True)
-    point = models.CharField(choices=PRODUCT_START, max_length=10, default=PRODUCT_START[0][0])
+    point = models.CharField(choices=PRODUCT_START, max_length=10, default=PRODUCT_START[0][0], verbose_name='point')
 
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
@@ -58,6 +58,3 @@ class Comment(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail', args={self.product.id})
-
-
-
