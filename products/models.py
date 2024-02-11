@@ -1,6 +1,6 @@
 from django.db import models
 from django.shortcuts import reverse
-
+from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import get_user_model
 
 
@@ -46,9 +46,9 @@ class Comment(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='comments')
 
-    body = models.TextField(verbose_name='text')
+    body = models.TextField(verbose_name=_('text'))
     active = models.BooleanField(default=True)
-    point = models.CharField(choices=PRODUCT_START, max_length=10, default=PRODUCT_START[0][0], verbose_name='point')
+    point = models.CharField(choices=PRODUCT_START, max_length=10, default=PRODUCT_START[0][0], verbose_name=_('point'))
 
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
