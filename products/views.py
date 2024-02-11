@@ -1,7 +1,9 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import generic
 from django.shortcuts import get_object_or_404
 from django.urls import reverse, reverse_lazy
+from django.utils.translation import gettext as _
 
 from products.models import Product, Comment
 from products.forms import CommentForm
@@ -43,6 +45,11 @@ class CommentCreateView(generic.CreateView):
 
         obj.product = product
         return super().form_valid(form)
+
+
+def test_translation(request):
+    result = _('hello')
+    return HttpResponse(result)
 
 
 # @login_required
