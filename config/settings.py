@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: don't run with debug turned on in production!E
 # DEBUG = env.bool('DJANGO_DEBUG')
 DEBUG = True
 
@@ -195,3 +195,12 @@ ACCOUNT_UNIQUE_EMAIL = True
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+from django.contrib.messages import constants as messages
+# messages framework
+MESSAGE_TAGS = {
+    messages.WARNING: 'danger',
+    messages.INFO: 'info',
+    messages.SUCCESS: 'success',
+    messages.ERROR: 'alert',
+
+}

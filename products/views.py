@@ -4,6 +4,7 @@ from django.views import generic
 from django.shortcuts import get_object_or_404
 from django.urls import reverse, reverse_lazy
 from django.utils.translation import gettext as _
+from django.contrib import messages
 
 from products.models import Product, Comment
 from products.forms import CommentForm
@@ -48,8 +49,11 @@ class CommentCreateView(generic.CreateView):
 
 
 def test_translation(request):
-    result = _('hello')
-    return HttpResponse(result)
+    message = _('this is a success message')
+    messages.warning(request, message)
+    messages.error(request, message)
+    messages.success(request, message)
+    return render(request, 'products/message_test.html')
 
 
 # @login_required
