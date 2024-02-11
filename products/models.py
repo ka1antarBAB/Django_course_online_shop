@@ -36,11 +36,11 @@ class Product(models.Model):
 
 class Comment(models.Model):
     PRODUCT_START = [
-        ('1', 'very bad'),
-        ('2', 'bad'),
-        ('3', 'not bad'),
-        ('4', 'good'),
-        ('5', 'very good'),
+        ('1', _('very bad')),
+        ('2', _('bad')),
+        ('3', _('not bad')),
+        ('4', _('good')),
+        ('5', _('very good')),
 
     ]
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
