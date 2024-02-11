@@ -151,8 +151,14 @@ EMAIL_HOST_PASSWORD = 'fdht gywo lfac zziz'
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
 # LANGUAGE_CODE = 'en-us'
-LANGUAGE_CODE = 'fa'
+LANGUAGE_CODE = 'fa-ir'
 TIME_ZONE = 'Asia/Tehran'
+
+LANGUAGES = (
+    ('en', 'English'),
+    ('fa', 'Persian',),
+
+)
 
 USE_I18N = True
 USE_L10N = True
