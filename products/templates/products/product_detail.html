@@ -42,18 +42,30 @@
                                 <span class="price-separator">-</span>
                                 <span class="money old-price text-danger">{{ product.price_daler }} {% trans '$' %} </span>
                             </div>
-                            <div class="product-action d-flex align-items-sm-center align-content-center mb--30">
-                                <div class="quantity-wrapper d-flex justify-content-start">
+                            <div>
+                                <form action="{% url 'cart:add_to_cart' product.id %}" method="POST">
+                                    {% csrf_token %}
+{#                                    {{ add_to_cart_form|crispy }}#}
                                     <div class="quantity">
-                                        <input type="number" class="quantity-input" name="qty" id="qty" value="1"
-                                               min="1">
+                                        <input type="number" class="quantity-input" name="quantity" id="qty" value="1"
+                                               min="1" max="30">
                                     </div>
-                                </div>
-                                <button type="button" class="btn btn-small btn-bg-red btn-color-white btn-hover-2"
-                                        onclick="window.location.href='cart.html'">
-                                    {% translate 'add to cart' %}
-                                </button>
+                                    <button type="submit" class="btn">{% translate 'add to cart' %}</button>
+                                </form>
                             </div>
+{#                            <div class="product-action d-flex align-items-sm-center align-content-center mb--30">#}
+{#                                <div class="quantity-wrapper d-flex justify-content-start">#}
+{#                                    <div class="quantity">#}
+{#                                        <input type="number" class="quantity-input" name="qty" id="qty" value="1"#}
+{#                                               min="1">#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <a href=""></a>#}
+{#                                <button type="button" class="btn btn-small btn-bg-red btn-color-white btn-hover-2"#}
+{#                                        onclick="window.location.href='cart.html'">#}
+{#                                    {% translate 'add to cart' %}#}
+{#                                </button>#}
+{#                            </div>#}
                             <div class="product-footer-meta mt-5 pt-5">
                                 <p><span class="m-0">{% translate 'categories' %}</span>
                                     <a href="shop.html">لباس</a>,
