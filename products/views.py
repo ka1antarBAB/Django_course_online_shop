@@ -8,7 +8,7 @@ from django.contrib import messages
 
 from products.models import Product, Comment
 from products.forms import CommentForm
-
+from cart.forms import AddToCartProductForm
 # Create your views here.
 
 
@@ -30,6 +30,7 @@ class ProductDetailView(generic.DetailView):
         context = super().get_context_data(**kwargs)
         context["comments"] = Comment.objects.filter(active=True)
         context['comment_form'] = CommentForm()
+        context['add_to_cart_form'] = AddToCartProductForm()
         return context
 
 
