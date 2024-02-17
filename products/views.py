@@ -46,4 +46,5 @@ class CommentCreateView(generic.CreateView):
         product = get_object_or_404(Product, id=product_id)
 
         obj.product = product
+        messages.success(self.request, _('your comment has successfully dropped'))
         return super().form_valid(form)
