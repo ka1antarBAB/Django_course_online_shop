@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-15 11:21+0330\n"
+"POT-Creation-Date: 2024-02-17 11:51+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-#: .\templates\cart\cart_detail.html:64
+
+#: .\cart.py:35
+msgid "successfully added to cart"
+msgstr "به سبد خرید اضافه شد"
+
+#: .\cart.py:45
+msgid "remove from the cart"
+msgstr "از سبد خرید حذف شد"
+
+#: .\templates\cart\cart_detail.html:66
 msgid "update"
 msgstr "تایید"
+
+#: .\templates\cart\cart_detail.html:87
+msgid "the cart is empty if you want you can see the product on this page :"
+msgstr "شما هیچ محصولی را انتخاب نکرده اید میتوانید از طریق لینک زیر محصولات مارا مشاهده کنید"
+
+#: .\templates\cart\cart_detail.html:88
+msgid "products"
+msgstr "محصولات"
