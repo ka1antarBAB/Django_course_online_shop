@@ -153,18 +153,31 @@
                                             {% endfor %}
                                         </ul>
                                         <div class="review-form-wrapper">
+
                                             <div class="row">
                                                 <div class="border-top py-5 w-100"></div>
                                                 <div class="col-lg-8 m-auto">
-                                                    <span class="reply-title pull-right">
-                                                        {% trans 'write your comment' %}
-                                                    </span>
-                                                    <br>
-                                                    <form action="{% url 'comment_create' product.id %}" method="POST">
-                                                        {% csrf_token %}
-                                                        {{ comment_form|crispy }}
-                                                        <input type="submit" value="{% translate 'Submit' %}">
-                                                    </form>
+
+                                                    {% if user.is_authenticated %}
+                                                        <form action="{% url 'comment_create' product.id %}"
+                                                              method="POST">
+                                                            {% csrf_token %}
+                                                            <span class="reply-title pull-right">{% trans 'write your comment' %}</span>
+                                                            <br>
+                                                            {{ comment_form|crispy }}
+                                                            <input type="submit" value="{% translate 'Submit' %}">
+                                                        </form>
+                                                    {% else %}
+                                                        <p>{% trans 'if you want write your comment first you should login' %}</p>
+                                                        <a href="{% url 'account_login' %}">
+                                                            <button type="button" class="btn btn-success">
+                                                                {% trans 'login' %}</button>
+                                                        </a>
+                                                        <a href="{% url 'account_signup' %}">
+                                                            <button type="button" class="btn btn-success">
+                                                                {% trans 'signup' %}</button>
+                                                        </a>
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </div>
