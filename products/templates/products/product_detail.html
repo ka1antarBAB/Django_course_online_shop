@@ -19,8 +19,6 @@
             </div>
         </div>
     </div>
-    <!-- Breadcrumb area End -->
-
     <!-- Main Content Wrapper Start -->
     <div class="main-content-wrapper">
         <div class="page-content-inner ptb--80">
@@ -38,7 +36,7 @@
                                 {{ product.description }}
                             </p>
                             <div class="my-5 py-5 product-price-wrapper mb--25">
-                                <span class="money text-success">{{ product.price }} {% trans 'Toman' %}</span>
+                                <span class="money text-success"> {{ product.price }} {% trans 'Toman' %}</span>
                                 <span class="price-separator">-</span>
                                 <span class="money old-price text-danger">{{ product.price_daler }} {% trans '$' %} </span>
                             </div>
@@ -57,7 +55,7 @@
                                 </form>
                             </div>
                             <div class="product-footer-meta mt-5 pt-5">
-                                <p><span class="m-0">{% translate 'categories' %}</span>
+                                <p><span class="m-0">دسته بندی ها:</span>
                                     <a href="shop.html">لباس</a>,
                                     <a href="shop.html">تابستانی</a>,
                                     <a href="shop.html">گرم</a>,
@@ -77,7 +75,7 @@
                                 </a>
                                 <a class="m-0 product-data-tab__link nav-link" id="nav-info-tab" data-toggle="tab"
                                    href="#nav-info" role="tab" aria-selected="true">
-                                    <span>و{% trans 'detail' %}</span>
+                                    <span>{% trans 'detail' %}</span>
                                 </a>
                                 <a class="m-0 product-data-tab__link nav-link" id="nav-reviews-tab" data-toggle="tab"
                                    href="#nav-reviews" role="tab" aria-selected="true">
@@ -89,117 +87,85 @@
                                      aria-labelledby="nav-description-tab">
                                     <div class="product-description text-justify">
                                         <p>{{ product.description }}</p>
-                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
-                                            طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
-                                            لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف
-                                            بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و
-                                            آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت
-                                            بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در
-                                            زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود
-                                            در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل
-                                            حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی
-                                            اساسا مورد استفاده قرار گیرد.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                            از صنعت چاپ، و با استفاده از
-                                            طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
-                                            لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف
-                                            بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و
-                                            آینده، شناخت فراوان جامعه و متخصصان را می طلبد،
-                                            تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
-                                            خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت
-                                            که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و
-                                            زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی،
-                                            و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار
-                                            گیرد.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
-                                            از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
-                                            که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،</p>
-                                        <p>
-                                            و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در
-                                            شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا
-                                            با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
-                                            خلاقی، و فرهنگ پیشرو در زبان فارس
-                                            ی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه
-                                            راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی
-                                            دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد
-                                            استفاده قرار گیرد.</p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="tab-pane text-right" id="nav-info" role="tabpanel"
-                                 aria-labelledby="nav-info-tab">
-                                <div class="table-content table-responsive">
-                                    <table class="table shop_attributes">
-                                        <tbody>
-                                        <tr>
-                                            <th>وزن</th>
-                                            <td>۴۳۰ گرم</td>
-                                        </tr>
-                                        <tr>
-                                            <th>سایز</th>
-                                            <td>XL</td>
-                                        </tr>
-                                        <tr>
-                                            <th>رنگ</th>
-                                            <td>
-                                                <a href="shop-sidebar.html">مشکی</a>,
-                                                <a href="shop-sidebar.html">سبز</a>,
-                                                <a href="shop-sidebar.html">قرمز</a>,
-                                                <a href="shop-sidebar.html">نارنجی</a>,
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="tab-pane text-right" id="nav-info" role="tabpanel"
+                                     aria-labelledby="nav-info-tab">
+                                    <div class="table-content table-responsive">
+                                        <table class="table shop_attributes">
+                                            <tbody>
+                                            <tr>
+                                                <th>وزن</th>
+                                                <td>۴۳۰ گرم</td>
+                                            </tr>
+                                            <tr>
+                                                <th>سایز</th>
+                                                <td>XL</td>
+                                            </tr>
+                                            <tr>
+                                                <th>رنگ</th>
+                                                <td>
+                                                    <a href="shop-sidebar.html">مشکی</a>,
+                                                    <a href="shop-sidebar.html">سبز</a>,
+                                                    <a href="shop-sidebar.html">قرمز</a>,
+                                                    <a href="shop-sidebar.html">نارنجی</a>,
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="tab-pane fade" id="nav-reviews" role="tabpanel"
-                                 aria-labelledby="nav-reviews-tab">
-                                <div class="product-reviews">
-                                    <h3 class="review__title"> {{ product.comments.count }}{% translate 'comment for ' %}{{ product.title }}</h3>
-                                    <ul class="review__list">
-                                        {% for comment in product.comments.all %}
-                                            <li class="review__item">
-                                                <div class="review__container">
-                                                    <div class="review__text">
-                                                        <div class="d-flex flex-sm-row flex-row">
-                                                            <img src="{% static 'img/others/comment-1.jpg' %}"
-                                                                 alt="Review Avatar" class="review__avatar p-3">
-                                                            <div>
-                                                                <div class="review__meta">
-                                                                    <span class="review__published-date">{{ comment.datetime_created }}</span>
-                                                                    <span class="review__dash">-</span>
-                                                                    <strong class="review__author px-4">{{ comment.author }}</strong>
-                                                                </div>
-                                                                <div class="product-rating">
-                                                                    <div class="m-0 star-rating star-five">
-                                                                            <span>Rated
-                                                                                <strong class="rating">
-                                                                                {{ comment.point }}
-                                                                            </strong> out of 5
-                                                                            </span>
+                                <div class="tab-pane fade" id="nav-reviews" role="tabpanel"
+                                     aria-labelledby="nav-reviews-tab">
+                                    <div class="product-reviews">
+                                        <h3 class="review__title">
+                                            {{ product.comments.count }}{% translate 'comment for ' %}{{ product.title }}</h3>
+                                        <ul class="review__list">
+                                            {% for comment in product.comments.all %}
+                                                <li class="review__item">
+                                                    <div class="review__container">
+                                                        <div class="review__text">
+                                                            <div class="d-flex flex-sm-row flex-row">
+                                                                <img src="assets/img/others/comment-1.jpg"
+                                                                     alt="Review Avatar" class="review__avatar">
+                                                                <div>
+                                                                    <div class="review__meta">
+                                                                        <strong class="review__author px-4">{{ comments.datetime_created }}</strong>
+                                                                        <span class="review__dash">-</span>
+                                                                        <span class="review__published-date">{{ comment.author }}</span>
+                                                                    </div>
+                                                                    <div class="product-rating">
+                                                                        <div class="m-0 star-rating star-five">
+                                                                        <span>Rated
+                                                                            <strong class="rating">{{ comment.point }}</strong>
+                                                                            out of 5
+                                                                        </span>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <p class="review__description text-right px-4">
+                                                                {{ comment.body }}
+                                                            </p>
                                                         </div>
-                                                        <p class="review__description text-right px-4">
-                                                            {{ comment.body }}
-                                                        </p>
                                                     </div>
-                                                </div>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                    <div class="review-form-wrapper">
-                                        <div class="row">
-                                            <div class="border-top py-5 w-100"></div>
-                                            <div class="col-lg-8 m-auto">
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                        <div class="review-form-wrapper">
+                                            <div class="row">
+                                                <div class="border-top py-5 w-100"></div>
+                                                <div class="col-lg-8 m-auto">
                                                     <span class="reply-title pull-right">
                                                         {% trans 'write your comment' %}
                                                     </span>
-                                                <br>
-                                                <form action="{% url 'comment_create' product.id %}" method="POST">
-                                                    {% csrf_token %}
-                                                    {{ comment_form|crispy }}
-                                                    <input type="submit" value="{% translate 'Submit' %}">
-                                                </form>
+                                                    <br>
+                                                    <form action="{% url 'comment_create' product.id %}" method="POST">
+                                                        {% csrf_token %}
+                                                        {{ comment_form|crispy }}
+                                                        <input type="submit" value="{% translate 'Submit' %}">
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -212,5 +178,7 @@
         </div>
     </div>
     <!-- Main Content Wrapper End -->
+
+    <!-- Breadcrumb area End -->
 
 {% endblock content %}
