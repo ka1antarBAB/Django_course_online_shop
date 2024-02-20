@@ -2,24 +2,20 @@
 {% load i18n %}
 {% load static %}
 {% load crispy_forms_tags %}
-{#{% load comment_tags %}#}
+
 {% block title %}
     products detail
 {% endblock title %}
+
+{% block page_title %}
+    <h1>product detail</h1>
+{% endblock page_title %}
+
+
+
 {% block content %}
-    <!-- Breadcrumb area Start -->
-    <div class="breadcrumb-area bg-color ptb--90" data-bg-color="#f6f6f6">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
-                        <h1 class="page-title">{% trans ' product details of :' %} {{ product.title }} </h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Main Content Wrapper Start -->
+    {% include 'cart/cart_sidebar.html' with title=product.title%}
+    <!-- Main Content Wrapper End -->
     <div class="main-content-wrapper">
         <div class="page-content-inner ptb--80">
             <div class="container">
@@ -190,8 +186,5 @@
             </div>
         </div>
     </div>
-    <!-- Main Content Wrapper End -->
-
     <!-- Breadcrumb area End -->
-
 {% endblock content %}
