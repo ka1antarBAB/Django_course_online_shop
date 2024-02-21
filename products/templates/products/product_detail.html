@@ -2,6 +2,7 @@
 {% load i18n %}
 {% load static %}
 {% load crispy_forms_tags %}
+{% load jalali_tags %}
 
 {% block title %}
     products detail
@@ -128,7 +129,7 @@
 {#                                                                     alt="Review Avatar" class="review__avatar">#}
                                                                 <div>
                                                                     <div class="review__meta" dir="ltr">
-                                                                        <strong class="review__published-date">{{ comment.datetime_created }}</strong>
+                                                                        <strong class="review__published-date">{{ comment.datetime_created|to_jalali:'%Y/%B/%d _ %H:%M' }}</strong>
                                                                         <span class="review__dash">-</span>
                                                                         <span class="review__author px-4">{{ comment.author.username }}</span>
                                                                     </div>

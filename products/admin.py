@@ -1,5 +1,7 @@
 from django.contrib import admin
 
+from jalali_date.admin import ModelAdminJalaliMixin
+
 from accounts.models import CustomUser
 from products.models import Product, Comment
 
@@ -14,7 +16,7 @@ class ProductCommentsInline(admin.StackedInline):
 
 
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
     list_display = ('title', 'price', 'datetime_created', 'active',)
     inlines = [
         ProductCommentsInline,
@@ -22,5 +24,5 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 @admin.register(Comment)
-class ProductCommentAdmin(admin.ModelAdmin):
+class ProductCommentAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
     list_display = ('product', 'datetime_created', 'active',)

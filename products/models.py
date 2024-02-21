@@ -2,6 +2,7 @@ from django.db import models
 from django.shortcuts import reverse
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import get_user_model
+from django.utils import timezone
 
 
 class ActiveProductManager(models.Manager):
@@ -15,7 +16,7 @@ class Product(models.Model):
     active = models.BooleanField(default=True)
     image = models.ImageField(verbose_name=_("Product Image"), upload_to="products/products_cover", blank=True, null=True)
 
-    datetime_created = models.DateTimeField(auto_now_add=True)
+    datetime_created = models.DateTimeField(default=timezone.now)
     datetime_modified = models.DateTimeField(auto_now=True)
     price = models.PositiveIntegerField()
     price_daler = models.DecimalField(max_digits=7, decimal_places=3)
@@ -51,7 +52,7 @@ class Comment(models.Model):
     active = models.BooleanField(default=True)
     point = models.CharField(choices=PRODUCT_START, max_length=10, default=PRODUCT_START[0][0], verbose_name=_('point'))
 
-    datetime_created = models.DateTimeField(auto_now_add=True)
+    datetime_created = models.DateTimeField(default=timezone.now)
     datetime_modified = models.DateTimeField(auto_now=True)
 
     # active_comment_manager = ActiveCommentManager()
