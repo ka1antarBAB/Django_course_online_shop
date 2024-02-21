@@ -14,6 +14,7 @@ class ActiveProductManager(models.Manager):
 class Product(models.Model):
     title = models.CharField(max_length=100)
     description = RichTextField()
+    short_description = models.CharField(max_length=300, blank=True)
     active = models.BooleanField(default=True)
     image = models.ImageField(verbose_name=_("Product Image"), upload_to="products/products_cover", blank=True, null=True)
 
