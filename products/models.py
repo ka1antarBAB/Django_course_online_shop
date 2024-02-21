@@ -3,6 +3,7 @@ from django.shortcuts import reverse
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import get_user_model
 from django.utils import timezone
+from ckeditor.fields import RichTextField
 
 
 class ActiveProductManager(models.Manager):
@@ -12,7 +13,7 @@ class ActiveProductManager(models.Manager):
 
 class Product(models.Model):
     title = models.CharField(max_length=100)
-    description = models.TextField()
+    description = RichTextField()
     active = models.BooleanField(default=True)
     image = models.ImageField(verbose_name=_("Product Image"), upload_to="products/products_cover", blank=True, null=True)
 
