@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'rosetta',
     'jalali_date',
+    'tinymce',
+    'ckeditor',
     # my-apps
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
