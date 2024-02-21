@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'products.apps.ProductsConfig',
     'cart.apps.CartConfig'
+    'jalali.apps.JalaliDateConfig',
 
 ]
 
