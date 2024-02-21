@@ -9,12 +9,13 @@
             <div class="mini-cart__content">
                 <ul class="mini-cart__list text-right">
                     {% for item in cart %}
-                        {{ title }}
                         <li class="mini-cart__product d-flex justify-content-between">
                             <div class="mini-cart__product__image">
-                                <a href="#">
-                                    <img src="assets/img/products/prod-1-100x100.jpg" alt="products">
-                                </a>
+                                {% if product.image %}
+                                    <img class="m-auto" style="max-height: 400px;"
+                                         src="{{ item.product_object.image.url }}"
+                                         alt="product">
+                                {% endif %}
                             </div>
                             <div class="mini-cart__product__content pt-2">
                                     <span class="mini-cart__product__title d-flex flex-row justify-content-between">
