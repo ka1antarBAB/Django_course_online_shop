@@ -13,6 +13,7 @@ class Product(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     active = models.BooleanField(default=True)
+    image = models.ImageField(verbose_name=_("Product Image"), upload_to="products/products_cover", blank=True, null=True)
 
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
