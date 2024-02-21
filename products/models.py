@@ -19,7 +19,6 @@ class Product(models.Model):
     datetime_created = models.DateTimeField(default=timezone.now)
     datetime_modified = models.DateTimeField(auto_now=True)
     price = models.PositiveIntegerField()
-    price_daler = models.DecimalField(max_digits=7, decimal_places=3)
 
     objects = models.Manager()
     active_products_manager = ActiveProductManager()

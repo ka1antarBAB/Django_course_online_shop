@@ -3,6 +3,8 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% load jalali_tags %}
+{% load persion_translation_tags %}
+ {% load humanize %}
 
 {% block title %}
     products detail
@@ -34,10 +36,10 @@
                             <p class="product-short-description mb--20">
                                 {{ product.description }}
                             </p>
-                            <div class="my-5 py-5 product-price-wrapper mb--25">
-                                <span class="money text-success"> {{ product.price }} {% trans 'Toman' %}</span>
+                            <div class="my-5 py-5 product-price-wrapper mb--25" dir="ltr">
+{#                                <span class="money text-success">  {% trans 'Toman' %}</span>#}
                                 <span class="price-separator">-</span>
-                                <span class="money old-price text-danger">{{ product.price_daler }} {% trans '$' %} </span>
+                                <span class="money old-price text-danger">{{ product.price|intcomma:False|e_to_p_number }} {% trans '$' %} </span>
                             </div>
                             <div class="product-action d-flex align-items-sm-center align-content-center mb--30">
                                 <form action="{% url 'cart:cart_add' product.id %}" method="POST">
@@ -129,7 +131,7 @@
 {#                                                                     alt="Review Avatar" class="review__avatar">#}
                                                                 <div>
                                                                     <div class="review__meta" dir="ltr">
-                                                                        <strong class="review__published-date">{{ comment.datetime_created|to_jalali:'%Y/%B/%d _ %H:%M' }}</strong>
+                                                                        <strong class="review__published-date">{{ comment.datetime_created|to_jalali:'%Y/%B/%d _ %H:%M'|e_to_p_number }}</strong>
                                                                         <span class="review__dash">-</span>
                                                                         <span class="review__author px-4">{{ comment.author.username }}</span>
                                                                     </div>

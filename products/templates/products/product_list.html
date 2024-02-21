@@ -1,4 +1,7 @@
 {% extends "_Base.html" %}
+{% load i18n %}
+{% load humanize %}
+{% load persion_translation_tags %}
 {% block title %}
     products list
 {% endblock title %}
@@ -64,11 +67,11 @@
                                                             <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
 
                                                         </h3>
-                                                        <div class="product-price-wrapper mb--30">
-                                                            <span class="money text-success">{{ product.price }} تومان</span>
+                                                        <div class="product-price-wrapper mb--30" dir="ltr">
+                                                            <span class="money text-success">{{ product.price|intcomma:False|e_to_p_number }}</span>
                                                             <span class="money-separator">-</span>
                                                             <span class="old-price text-danger">
-                                                                <span class="money text-danger">{{ product.price }} تومان</span>
+                                                                <span class="money text-danger">{{ product.price|intcomma:False|e_to_p_number }} تومان</span>
                                                             </span>
                                                         </div>
                                                         <a href="cart.html"

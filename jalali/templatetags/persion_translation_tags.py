@@ -4,7 +4,7 @@ register = template.Library()
 
 
 @register.filter
-def active_comment(number):
+def e_to_p_number(number):
     number = str(number)
     persian = '۰١٢٣٤٥٦٧٨٩'
     english = '0123456789'

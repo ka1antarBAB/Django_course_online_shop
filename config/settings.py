@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+
     # third party apps
     'crispy_forms',
     'crispy_bootstrap4',
@@ -58,8 +60,8 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
     'products.apps.ProductsConfig',
-    'cart.apps.CartConfig'
-    'jalali.apps.JalaliDateConfig',
+    'cart.apps.CartConfig',
+    'jalali.apps.JalaliConfig',
 
 ]
 
