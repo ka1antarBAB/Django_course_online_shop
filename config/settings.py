@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'rosetta',
+    'jalali_date',
     # my-apps
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
@@ -153,8 +154,8 @@ EMAIL_HOST_PASSWORD = 'fdht gywo lfac zziz'
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-# LANGUAGE_CODE = 'fa-ir'
+# LANGUAGE_CODE = 'env-us'
+LANGUAGE_CODE = 'fa-ir'
 TIME_ZONE = 'Asia/Tehran'
 
 LANGUAGES = (
