@@ -58,12 +58,15 @@ INSTALLED_APPS = [
     'jalali_date',
     'tinymce',
     'ckeditor',
+    'phonenumber_field',
     # my-apps
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
     'products.apps.ProductsConfig',
     'cart.apps.CartConfig',
     'jalali.apps.JalaliConfig',
+    'orders.apps.OrdersConfig',
+
 
 ]
 
