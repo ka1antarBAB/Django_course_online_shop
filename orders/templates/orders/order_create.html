@@ -9,7 +9,7 @@
 {% endblock title %}
 
 {% block page_title %}
-    Order Title
+    {% translate 'Orders' %}
 {% endblock page_title %}
 
 {% block content %}
@@ -90,23 +90,19 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <th>محصول شماره یک
-                                            <strong><span>&#10005;</span>۲</strong>
-                                        </th>
-                                        <td class="text-right">۲۹۶,۰۰۰ تومان</td>
-                                    </tr>
-                                    <tr>
-                                        <th>محصول شماره دو
-                                            <strong><span>&#10005;</span>۱</strong>
-                                        </th>
-                                        <td class="text-right">۵۸,۰۰۰ تومان</td>
-                                    </tr>
+                                    {% for item in cart %}
+                                        <tr>
+                                            <th>{{ item.product_object.title }}
+                                                <strong><span>&#10005;</span>{{item.quantity|e_to_p_number }}</strong>
+                                            </th>
+                                            <td class="text-right">{{ item.product_object.price|intcomma:False|e_to_p_number }} {% translate '$' %}</td>
+                                        </tr>
+                                    {% endfor %}
                                     </tbody>
                                     <tfoot>
                                     <tr class="cart-subtotal">
                                         <th>مجموع</th>
-                                        <td class="text-right">۳۴۸,۰۰۰ تومان</td>
+                                        <td class="text-right">{{ cart.get_total_price|intcomma:False|e_to_p_number }}</td>
                                     </tr>
                                     </tfoot>
                                 </table>
