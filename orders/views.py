@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views import generic
 # Create your views here.
+from .forms import OrderForm
 
 
-class OrderListView(generic.TemplateView):
-    template_name = 'orders/order_create.html'
+def order_create_view(request):
+    return render(request, 'orders/order_create.html', {'form': OrderForm()})
