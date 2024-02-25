@@ -12,9 +12,7 @@
                         <li class="mini-cart__product d-flex justify-content-between">
                             <div class="mini-cart__product__image">
                                 {% if product.image %}
-                                    <img class="m-auto" style="max-height: 400px;"
-                                         src="{{ item.product_object.image.url }}"
-                                         alt="product">
+                                    <img src="{{ item.product_object.image.url }}" alt="Product Thumnail">
                                 {% endif %}
                             </div>
                             <div class="mini-cart__product__content pt-2">
@@ -36,7 +34,7 @@
                     <span class="ammount">{{ cart.get_total_price }}</span>
                 </div>
                 <div class="mini-cart__buttons">
-                    <a href="{% url 'list' %}"
+                    <a href="{% url 'products:list' %}"
                        class="btn btn-fullwidth btn-bg-sand mb--20">{% translate 'products' %}</a>
                     <a href="checkout.html" class="btn btn-fullwidth btn-bg-sand">{% trans 'the payment' %}</a>
                 </div>
