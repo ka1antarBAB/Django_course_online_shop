@@ -29,7 +29,7 @@ class Product(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('detail', args={self.pk})
+        return reverse('products:detail', args={self.pk})
 
 
 # class ActiveCommentManager(models.Manager):
@@ -60,4 +60,4 @@ class Comment(models.Model):
     objects = models.Manager()
 
     def get_absolute_url(self):
-        return reverse('detail', args={self.product.id})
+        return reverse('products:detail', args={self.product.id})
