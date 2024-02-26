@@ -36,7 +36,7 @@
                 <div class="mini-cart__buttons">
                     <a href="{% url 'products:list' %}"
                        class="btn btn-fullwidth btn-bg-sand mb--20">{% translate 'products' %}</a>
-                    <a href="checkout.html" class="btn btn-fullwidth btn-bg-sand">{% trans 'the payment' %}</a>
+                    <a href="{% url 'order_detail' %}" class="btn btn-fullwidth btn-bg-sand">{% trans 'the payment' %}</a>
                 </div>
             </div>
         </div>

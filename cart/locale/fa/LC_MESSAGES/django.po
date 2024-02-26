@@ -8,14 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-17 11:51+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2024-02-26 09:45+0330\n"
+"PO-Revision-Date: 2024-02-26 09:46+0330\n"
+"Last-Translator: ehsan malek <ehsan@ehsan.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
 
 #: .\cart.py:35
 msgid "successfully added to cart"
@@ -25,14 +26,36 @@ msgstr "به سبد خرید اضافه شد"
 msgid "remove from the cart"
 msgstr "از سبد خرید حذف شد"
 
-#: .\templates\cart\cart_detail.html:66
+#: .\templates\cart\cart_detail.html:74
 msgid "update"
 msgstr "تایید"
 
-#: .\templates\cart\cart_detail.html:87
+#: .\templates\cart\cart_detail.html:95
 msgid "the cart is empty if you want you can see the product on this page :"
-msgstr "شما هیچ محصولی را انتخاب نکرده اید میتوانید از طریق لینک زیر محصولات مارا مشاهده کنید"
+msgstr ""
+"شما هیچ محصولی را انتخاب نکرده اید میتوانید از طریق لینک زیر محصولات مارا "
+"مشاهده کنید"
 
-#: .\templates\cart\cart_detail.html:88
+#: .\templates\cart\cart_detail.html:96 .\templates\cart\cart_sidebar.html:38
 msgid "products"
 msgstr "محصولات"
+
+#: .\templates\cart\cart_sidebar.html:8
+msgid "cart"
+msgstr "سبد خرید"
+
+#: .\templates\cart\cart_sidebar.html:33
+msgid "total"
+msgstr "مجموع"
+
+#: .\templates\cart\cart_sidebar.html:39
+msgid "the payment"
+msgstr "پرداخت"
+
+#: .\views.py:48
+msgid "your cart has been successfully removed from your cart"
+msgstr "سبد خرید شما با موفقیت پاک شد"
+
+#: .\views.py:50
+msgid "your cart is already empty"
+msgstr "سبد خرید شما خالی است "

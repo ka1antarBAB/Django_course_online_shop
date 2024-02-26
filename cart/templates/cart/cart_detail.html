@@ -42,7 +42,8 @@
                                                             href="{% url 'cart:cart_remove' item.product_object.id %}"><i
                                                             class="flaticon flaticon-cross"></i></a></td>
                                                     <td class="product-thumbnail text-left">
-                                                        <img src="{{ item.product_object.image.url }}" alt="Product Thumnail">
+                                                        <img src="{{ item.product_object.image.url }}"
+                                                             alt="Product Thumnail">
                                                     </td>
                                                     <td class="product-name wide-column">
                                                         <h3>
@@ -87,13 +88,19 @@
                                         </table>
                                         <div class="row no-gutters border-top pt--20 mt--20">
                                             <div class="col-sm-6 text-sm-right">
-                                                <button type="submit" class="cart-form__btn">خالی کردن سبد خرید</button>
+                                                <form action="{% url 'cart:cart_clear' %}" method="POST">
+                                                    {% csrf_token %}
+                                                    <button type="submit" class="cart-form__btn">
+                                                        {% translate "clear your cart" %}
+                                                    </button>
+                                                </form>
+
                                             </div>
                                         </div>
                                     </div>
                                 {% else %}
                                     <p>{% trans 'the cart is empty if you want you can see the product on this page :' %}</p>
-                                    <a href="{% url "list" %}">{% trans 'products' %}</a>
+                                    <a href="{% url "products:list" %}">{% trans 'products' %}</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -123,7 +130,8 @@
                                     {#                                    </div>#}
                                 </div>
                             </div>
-                            <a href="{% url "order_detail" %}" class="btn btn-fullwidth btn-bg-red btn-color-white btn-hover-2">
+                            <a href="{% url "order_detail" %}"
+                               class="btn btn-fullwidth btn-bg-red btn-color-white btn-hover-2">
                                 ثبت سفارش
                             </a>
                         </div>
