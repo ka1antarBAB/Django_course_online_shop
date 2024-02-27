@@ -86,17 +86,17 @@
                                             </tbody>
 
                                         </table>
-                                        <div class="row no-gutters border-top pt--20 mt--20">
-                                            <div class="col-sm-6 text-sm-right">
-                                                <form action="{% url 'cart:cart_clear' %}" method="POST">
-                                                    {% csrf_token %}
-                                                    <button type="submit" class="cart-form__btn">
-                                                        {% translate "clear your cart" %}
-                                                    </button>
-                                                </form>
-
+                                        {% if cart|length %}
+                                            <div class="row no-gutters border-top pt--20 mt--20">
+                                                <div class="col-sm-6 text-sm-right">
+                                                    <form action="{% url 'cart:cart_clear' %}" method="POST">
+                                                        <button type="submit" class="cart-form__btn">
+                                                            {% translate "clear your cart" %}
+                                                        </button>
+                                                    </form>
+                                                </div>
                                             </div>
-                                        </div>
+                                        {% endif %}
                                     </div>
                                 {% else %}
                                     <p>{% trans 'the cart is empty if you want you can see the product on this page :' %}</p>
