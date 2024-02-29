@@ -223,3 +223,5 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert',
 
 }
+
+ZARINPAL_MERCHANT_ID = env('DJANGO_ZARINPAL_MERCHANT_ID')
