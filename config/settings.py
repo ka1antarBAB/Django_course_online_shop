@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'jalali.apps.JalaliConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 
 
 ]
