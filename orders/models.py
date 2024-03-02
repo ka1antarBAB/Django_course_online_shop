@@ -22,7 +22,7 @@ class Order(models.Model):
     date_ordered_modified = models.DateTimeField(auto_now=True)
 
     order_notes = models.CharField(max_length=500, blank=True, verbose_name=_("order notes"))
-    authority = models.CharField(max_length=250, blank=True, verbose_name=_("authority"))
+    # authority = models.CharField(max_length=250, blank=True, verbose_name=_("authority"))
 
     def __str__(self):
         return f'Order : {self.id}'
