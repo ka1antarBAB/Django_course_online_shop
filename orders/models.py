@@ -22,7 +22,10 @@ class Order(models.Model):
     date_ordered_modified = models.DateTimeField(auto_now=True)
 
     order_notes = models.CharField(max_length=500, blank=True, verbose_name=_("order notes"))
+
     zarinpal_authority = models.CharField(max_length=255, blank=True, verbose_name=_("authority"))
+    zarinpal_ref_id = models.CharField(max_length=255, blank=True, verbose_name=_("ref_id"))
+    zarinpal_data = models.TextField(blank=True)
 
     def __str__(self):
         return f'Order : {self.id}'
