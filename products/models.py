@@ -16,7 +16,7 @@ class Product(models.Model):
     description = RichTextField()
     short_description = models.CharField(max_length=300, blank=True)
     active = models.BooleanField(default=True)
-    image = models.ImageField(verbose_name=_("Product Image"), upload_to="products/products_cover", blank=True, null=True)
+    image = models.ImageField(_("Product Image"), upload_to="products/products_cover", blank=True)
 
     datetime_created = models.DateTimeField(default=timezone.now)
     datetime_modified = models.DateTimeField(auto_now=True)

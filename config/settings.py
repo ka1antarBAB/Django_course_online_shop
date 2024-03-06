@@ -28,8 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!E
-# DEBUG = env.bool('DJANGO_DEBUG')
-DEBUG = False
+DEBUG = env('DJANGO_DEBUG')
+# DEBUG = False
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     'rosetta',
     'jalali_date',
     'tinymce',
-    'ckeditor',
+    # 'ckeditor',
     'phonenumber_field',
     # my-apps
     'accounts.apps.AccountsConfig',
@@ -67,7 +67,7 @@ INSTALLED_APPS = [
     'jalali.apps.JalaliConfig',
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
-
+    'zarinpal.apps.ZarinpalConfig',
 
 ]
 
@@ -83,6 +83,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # Add the account middleware:
     "allauth.account.middleware.AccountMiddleware",
+
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -163,8 +164,8 @@ EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-# LANGUAGE_CODE = 'env-us'
-LANGUAGE_CODE = 'fa-ir'
+LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'fa-ir'
 TIME_ZONE = 'Asia/Tehran'
 
 LANGUAGES = (
