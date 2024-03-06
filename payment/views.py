@@ -1,4 +1,5 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
+from django.http import HttpResponse, HttpResponseRedirect
 import requests
 import json
 
@@ -30,10 +31,21 @@ def payment_process(request):
         "merchant_id": settings.ZARINPAL_MERCHANT_ID,
         "amount": rial_total_price,
         "description": f'#{order.id} : {order.user.first_name} {order.user.last_name}',
-        "callback_url": '127.0.0.1:8000',
+        "callback_url": 'https://127.0.0.1:8000',
 
     }
     res = requests.post(url=zarinpal_request_url, data=json.dumps(request_date), headers=request_header)
+    data = json.loads(res.text)
+    authority = data['authority']
 
-    print(res.json()['data'])
+    order.zarinpal_authority = authority
+    order.save()
+
+    if 'errors' not in data or len(data['errors']) == 0:
+        return redirect("https://sandbox.zarinpal.com/pg/StartPay/{authority}".format(authority=authority))
+    else:
+        return HttpResponse("errors: " + str(data['errors']))
+
+
+
 
